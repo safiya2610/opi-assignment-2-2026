@@ -1,6 +1,8 @@
 # The Cloud-Native OVS Datapath Challenge
 
 This repository contains a fully automated, production-grade setup to deploy KubeVirt Virtual Machines attached to an Open vSwitch (OVS) secondary network bridge using Multus CNI. It serves as a foundation for understanding vDPA hardware offload on NVIDIA DPUs.
+<img width="2098" height="750" alt="image" src="https://github.com/user-attachments/assets/1080cc04-b256-40d3-bc10-4fc91b6676fd" />
+
 
 ---
 
