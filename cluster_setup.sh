@@ -140,6 +140,9 @@ export KUBEVIRT_VERSION=$(curl -s https://storage.googleapis.com/kubevirt-prow/r
 kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/kubevirt-operator.yaml
 kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/kubevirt-cr.yaml
 
+log "Enabling software emulation"
+kubectl patch kubevirt kubevirt -n kubevirt --type=merge --patch '{"spec":{"configuration":{"developerConfiguration":{"useEmulation":true}}}}'
+
 
 log "Waiting for KubeVirt to become ready (can take up to 10 mins on WSL)..."
 kubectl wait -n kubevirt kv kubevirt --for condition=Available --timeout=900s
